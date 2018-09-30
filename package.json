@@ -1,0 +1,24 @@
+{
+  "name": "vocabulator",
+  "version": "0.1.0",
+  "description": "TTS module for SpeechSynthesis API",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bersilius/vocabulator.git"
+  },
+  "keywords": [
+    "tts",
+    "speech",
+    "synthesis"
+  ],
+  "author": {
+    "name": "Adam Bereczk",
+    "email": "adam.bereczk@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bersilius/vocabulator/issues"
+  },
+  "homepage": "https://github.com/bersilius/vocabulator#readme"
+}

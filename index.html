@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Vocabulator test page">
+    <meta name="author" content="Adam Bereczk">
+    <meta name="Keywords" content="tts, speech, synthesis" />
+    <link rel="shortcut icon" href="docs/assets/ico/favicon.ico">
+
+    <title>Vocabulator</title>
+
+    <script type="module">
+      // Initialize Vocabulator
+      import vocabulator from './src/index.js';
+
+      const synthesizer = vocabulator({
+        language: 'en-GB',
+        voiceName: 'Google UK English Male',
+        pitch: 1
+      });
+
+      // Make syntesizer available in `window` object
+      window.synthesizer = synthesizer
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <div>
+        <h1>Vocabulator</h1>
+        <p>Vocabulator is a wrapper for SpeechSynthesis API</p>
+      </div>
+
+      <div>
+        <div>
+          <form>
+            <div style="margin-bottom: 1em">
+              <label>Text:</label>
+              <input type="text" name="text">
+            </div>
+
+            <div style="margin-bottom: 1em">
+              <label>Picth:</label>
+              <input type="float" name="pitch" step=any>
+            </div>
+
+            <div style="margin-bottom: 1em">
+              <label>Rate:</label>
+              <input type="float" name="rate" step=any>
+            </div>
+
+            <div style="margin-bottom: 1em">
+              <select name="Gender">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+            </div>
+
+            <input type="submit">
+          </form>
+        </div>
+      </div>
+
+      <div>
+        <p><a href="https://github.com/bersilius/vocabulator">vocabulator</a> is maintained by <a href="https://github.com/bersilius">bersilius</a></p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      document.querySelector('form').addEventListener('submit', event => {
+        console.log(event)
+        event.preventDefault();
+        window.synthesizer.say({
+          text: event.target[0].value,
+          pitch: event.target[1].value,
+          rate: event.target[2].value,
+          voiceName: `Google UK English ${event.target[3].value}`
+        })
+      });
+    </script>
+  </body>
+</html>
