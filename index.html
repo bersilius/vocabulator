@@ -69,7 +69,6 @@
     </div>
     <script type="text/javascript">
       document.querySelector('form').addEventListener('submit', event => {
-        console.log(event)
         event.preventDefault();
         window.synthesizer.say({
           text: event.target[0].value,
