@@ -15,10 +15,71 @@ const synthesizer = vocabulator({
 synthesizer.say({ text: 'Hello, world!', /* language, voiceName, pitch, ... */  })
 ```
 
+## Options
+
+If you do not provide any options on initialization, built-in options will be used.
+Options provided on initialization will be used by default instead of built-in.
+Same options can be provided with each `say` call, and it will override the init config for that specific utterance.
+
+### Available options
+
+#### language
+
+See voices with languages below.
+
+#### voiceName
+
+See voices with languages below.
+
+#### pitch
+
+Float. Pitch of the voice.
+
+#### rate
+
+Float. Rate of the voice.
+
+#### onend
+
+Function as callback on event.
+
+The end event of the Web Speech API SpeechSynthesisUtterance object is fired when the utterance has finished being spoken.
+
+#### onerror
+
+Function as callback on event.
+
+The error event of the Web Speech API SpeechSynthesisUtterance object is fired when an error occurs that prevents the utterance from being succesfully spoken.
+
+#### onmark
+
+Function as callback on event.
+
+The mark event of the Web Speech API SpeechSynthesisUtterance object is fired when the spoken utterance reaches a named SSML "mark" tag.
+
+#### onpause
+
+Function as callback on event.
+
+The pause event of the Web Speech API SpeechSynthesisUtterance object is fired when the utterance is paused part way through.
+
+#### onresume
+
+Function as callback on event.
+
+The resume event of the Web Speech API SpeechSynthesisUtterance object is fired when a paused utterance is resumed.
+
+#### onstart
+
+Function as callback on event.
+
+The start event of the Web Speech API SpeechSynthesisUtterance object is fired when the utterance has begun to be spoken.
+
 ### Voices
 
 #### Chrome
 
+```
 - voiceURI: "Google Deutsch"
   name: "Google Deutsch"
   lang: "de-DE"
@@ -114,3 +175,4 @@ synthesizer.say({ text: 'Hello, world!', /* language, voiceName, pitch, ... */  
   lang: "zh-TW"
   localService: false
   default: false
+```

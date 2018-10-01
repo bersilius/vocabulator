@@ -18,7 +18,10 @@
       const synthesizer = vocabulator({
         language: 'en-GB',
         voiceName: 'Google UK English Male',
-        pitch: 1
+        pitch: 1,
+        // onend: event => {
+          // do something when finished
+        // }
       });
 
       // Make syntesizer available in `window` object
