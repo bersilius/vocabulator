@@ -9,8 +9,10 @@ if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !=
 }
 
 const init = config => {
+    let utterance
+
     const say = message => {
-        const utterance = new SpeechSynthesisUtterance(message.text)
+        utterance = new SpeechSynthesisUtterance(message.text)
 
         const language = message.language || config.language
         const voiceName = message.voiceName || config.voiceName
